@@ -1,0 +1,36 @@
+type Author
+{
+id:Int
+name:String
+email:String
+}
+type Book 
+{
+id:Int
+title:String
+dateCreation:Category
+abstractBook:String
+
+}
+type Query
+{
+getListAuthor:[Author]
+getAuthorById(id:Int):Author
+getListBook:[Book]
+getBookById(id:Int):Book
+getBookByAuthorId(id:Int):[book]
+}
+type Mutation
+{
+createAuthor(id:Int,name:String,email:String):Author
+updateAuthor(id:Int,name:String,email:String):Author
+deleteAuthor(id:Int):String
+addBook(id:Int,title:String,dateCreation:String,abstractBook:String,id:Int):Boolean
+deleteBook(id:Int):String
+updateBook(id:Int,title:String,dateCreation:String,abstractBook:String,ref:Int):Boolean
+}
+schema
+{
+query:Query
+mutation:Mutation
+}
